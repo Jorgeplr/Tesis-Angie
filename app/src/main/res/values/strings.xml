@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Tesis-Angie</string>
+    <string name="login_title">Login</string>
+    <string name="username_hint">Usuario</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button">INICIAR SESIÓN</string>
+</resources>
