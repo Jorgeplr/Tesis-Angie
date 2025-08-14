@@ -40,4 +40,14 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    // Retrofit para solicitudes HTTP
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+    // Material CalendarView para calendarios dinámicos
+    implementation(libs.material.calendarview)
+
+    // Lottie para animaciones
+    implementation(libs.lottie)
 }
