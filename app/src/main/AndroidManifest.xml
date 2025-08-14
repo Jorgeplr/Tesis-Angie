@@ -24,6 +24,9 @@
         <activity
             android:name="com.example.tesis_angie.screens.LoginActivity"
             android:exported="true" />
+        <activity
+            android:name="com.example.tesis_angie.screens.HomeActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

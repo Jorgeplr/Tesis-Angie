@@ -94,9 +94,14 @@ public class LoginActivity extends AppCompatActivity {
 
     private void setupClickListeners() {
         btnLogin.setOnClickListener(v -> handleLogin());
-
-        // Click en el card del botón para mejor UX
         btnCard.setOnClickListener(v -> handleLogin());
+        // Limpiar errores al escribir
+        etUsername.setOnFocusChangeListener((v, hasFocus) -> {
+            if (hasFocus) tilUsername.setError(null);
+        });
+        etPassword.setOnFocusChangeListener((v, hasFocus) -> {
+            if (hasFocus) tilPassword.setError(null);
+        });
     }
 
     private void handleLogin() {
@@ -167,10 +172,13 @@ public class LoginActivity extends AppCompatActivity {
             btnLogin.setEnabled(false);
             progressBar.setVisibility(View.VISIBLE);
             btnCard.animate().alpha(0.7f).setDuration(200).start();
+            // Animación de carga en el logo
+            ivLoginLogo.animate().rotationBy(360f).setDuration(1000).start();
         } else {
             btnLogin.setEnabled(true);
             progressBar.setVisibility(View.GONE);
             btnCard.animate().alpha(1f).setDuration(200).start();
+            ivLoginLogo.animate().rotation(0f).setDuration(200).start();
         }
     }
 
@@ -226,24 +234,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void navigateToMainApp() {
-        // Aquí navegarías a tu actividad principal
-        // Intent intent = new Intent(this, MainActivity.class);
-        // startActivity(intent);
-        // finish();
-
-        // Por ahora, mostrar mensaje temporal
-        btnLogin.setText("¡Bienvenido!");
-
-        // Animación de salida
-        loginCard.animate()
-                .alpha(0f)
-                .translationY(-50f)
-                .setDuration(500)
-                .withEndAction(() -> {
-                    // Aquí iría la navegación real
-                    finish();
-                })
-                .start();
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out); // Transición suave
+        finish();
     }
 
     @Override
