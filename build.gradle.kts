@@ -1,11 +1,3 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-plugins {
-    alias(libs.plugins.android.application) apply false
-}
+// Top-level build file where puedes agregar opciones de configuración globales para todos los subproyectos/módulos.
+// (No se requiere bloque plugins aquí)
 
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
