@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "567826120269",
+    "project_id": "cacao-expres",
+    "storage_bucket": "cacao-expres.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567826120269:android:4f6d71dcccd720a5346604",
+        "android_client_info": {
+          "package_name": "com.example.tesis_angie"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpGD85azqMAjd5DRXDKPqiGPndpHO6ChY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

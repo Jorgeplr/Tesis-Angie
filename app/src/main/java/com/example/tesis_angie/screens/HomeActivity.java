@@ -41,6 +41,10 @@ public class HomeActivity extends AppCompatActivity {
         tvTemperature = findViewById(R.id.tv_temperature_quick); // Actualizado al nuevo ID
         tvHumidity = findViewById(R.id.tv_humidity_quick); // Actualizado al nuevo ID
         tvPlants = findViewById(R.id.tv_plants_quick); // Actualizado al nuevo ID
+        findViewById(R.id.card_user).setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, UserAdminActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void setupGreeting() {
@@ -78,7 +82,9 @@ public class HomeActivity extends AppCompatActivity {
         }
         // Opciones del Drawer
         findViewById(R.id.drawer_btn_user).setOnClickListener(v -> {
-            // Aquí iría la lógica para la opción Usuario
+            // Abrir la ventana de administración de usuarios
+            Intent intent = new Intent(HomeActivity.this, UserAdminActivity.class);
+            startActivity(intent);
         });
         findViewById(R.id.drawer_btn_clima).setOnClickListener(v -> {
             // Aquí iría la lógica para la opción Clima
