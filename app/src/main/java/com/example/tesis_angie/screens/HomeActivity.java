@@ -5,20 +5,16 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
-
 import com.example.tesis_angie.R;
-
 import java.util.Random;
 
 public class HomeActivity extends AppCompatActivity {
     private TextView tvGreeting;
     private TextView tvTemperature, tvHumidity, tvPlants;
-    private Button btnGoToLogin;
     private DrawerLayout drawerLayout;
 
     // Handler para actualizaciones periódicas
@@ -36,34 +32,20 @@ public class HomeActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         initializeViews();
         setupGreeting();
-        setupClickListeners();
         startDataSimulation();
         setupDrawerLogic();
     }
 
     private void initializeViews() {
         tvGreeting = findViewById(R.id.tv_welcome_title); // Usar el TextView de bienvenida principal
-        tvTemperature = findViewById(R.id.tv_temperature); // Coincide con el layout
-        tvHumidity = findViewById(R.id.tv_humidity); // Coincide con el layout
-        tvPlants = findViewById(R.id.tv_plants); // Coincide con el layout
-        btnGoToLogin = findViewById(R.id.btnGoToLogin); // Se agregará en el layout
+        tvTemperature = findViewById(R.id.tv_temperature_quick); // Actualizado al nuevo ID
+        tvHumidity = findViewById(R.id.tv_humidity_quick); // Actualizado al nuevo ID
+        tvPlants = findViewById(R.id.tv_plants_quick); // Actualizado al nuevo ID
     }
 
     private void setupGreeting() {
         if (tvGreeting != null) {
             tvGreeting.setText("Bienvenido a Tesis Angie");
-        }
-    }
-
-    private void setupClickListeners() {
-        if (btnGoToLogin != null) {
-            btnGoToLogin.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
-                    startActivity(intent);
-                }
-            });
         }
     }
 

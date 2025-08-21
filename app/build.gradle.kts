@@ -45,8 +45,6 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
 
-    // Material CalendarView para calendarios dinámicos
-    implementation(libs.material.calendarview)
 
     // Lottie para animaciones
     implementation(libs.lottie)

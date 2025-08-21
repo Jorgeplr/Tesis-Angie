@@ -4,4 +4,23 @@
     <string name="username_hint">Usuario</string>
     <string name="password_hint">Contraseña</string>
     <string name="login_button">INICIAR SESIÓN</string>
+    <string name="home_title">Finca CacaoTech</string>
+    <string name="home_subtitle">Sistema de gestión inteligente para cultivos de cacao</string>
+    <string name="temperature_placeholder">Temperatura: --°C</string>
+    <string name="humidity_placeholder">Humedad: --%</string>
+    <string name="plants_placeholder">Plantas: --</string>
+    <string name="user">Usuario</string>
+    <string name="user_profile">Perfil y configuración</string>
+    <string name="weather">Clima</string>
+    <string name="weather_data">Datos meteorológicos</string>
+    <string name="reports">Reportes</string>
+    <string name="reports_stats">Análisis y estadísticas</string>
+    <string name="settings">Configuración</string>
+    <string name="settings_system">Ajustes del sistema</string>
+    <string name="quick_stats">Estado Actual</string>
+    <string name="temperature">Temperatura</string>
+    <string name="humidity">Humedad</string>
+    <string name="plants">Plantas</string>
+    <string name="menu_title">Menú principal</string>
+    <string name="logout">Cerrar sesión</string>
 </resources>

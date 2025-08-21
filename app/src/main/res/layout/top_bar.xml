@@ -2,66 +2,73 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="56dp"
-    android:background="@android:color/transparent">
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:minHeight="56dp"
+    android:fitsSystemWindows="true">
 
     <!-- Botón de menú alineado a la izquierda -->
     <ImageView
         android:id="@+id/topbar_menu_btn"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@android:drawable/ic_menu_more"
-        android:tint="#8B4513"
+        app:tint="#4E342E"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginStart="16dp"
         android:background="?android:attr/selectableItemBackground"
         android:clickable="true"
-        android:focusable="true" />
+        android:focusable="true"
+        android:padding="4dp"
+        android:contentDescription="Menú" />
 
     <!-- Icono de notificaciones alineado a la derecha -->
     <androidx.cardview.widget.CardView
         android:id="@+id/topbar_notification_btn"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="2dp"
-        app:cardBackgroundColor="#80FFFFFF"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        app:cardCornerRadius="22dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@id/topbar_user_avatar_card"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginEnd="12dp">
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:src="@android:drawable/ic_popup_reminder"
+            app:tint="#4E342E"
             android:layout_gravity="center"
-            android:tint="#8B4513" />
+            android:contentDescription="Notificaciones" />
     </androidx.cardview.widget.CardView>
 
     <!-- Icono de usuario alineado a la derecha -->
     <androidx.cardview.widget.CardView
         android:id="@+id/topbar_user_avatar_card"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="2dp"
-        app:cardBackgroundColor="#80FFFFFF"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        app:cardCornerRadius="22dp"
+        app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginEnd="16dp">
-
         <ImageView
             android:id="@+id/topbar_iv_user_avatar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:src="@android:drawable/ic_menu_my_calendar"
-            android:background="@drawable/user_avatar_background"
-            android:padding="8dp"
-            android:tint="@android:color/white" />
+            app:tint="#4E342E"
+            android:background="#FFFFFF"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:contentDescription="Usuario" />
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

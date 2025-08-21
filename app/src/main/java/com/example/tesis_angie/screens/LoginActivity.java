@@ -195,7 +195,7 @@ public class LoginActivity extends AppCompatActivity {
                 .start();
 
         // Animación de shake para el card
-        Animation shake = AnimationUtils.loadAnimation(this, android.R.anim.cycle_interpolator);
+        Animation shake = AnimationUtils.loadAnimation(this, R.anim.shake);
         loginCard.startAnimation(shake);
 
         // Limpiar campos de entrada
