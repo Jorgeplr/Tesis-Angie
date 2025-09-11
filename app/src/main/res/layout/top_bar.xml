@@ -26,6 +26,24 @@
         android:padding="4dp"
         android:contentDescription="Menú" />
 
+    <!-- Botón de retroceso: oculto por defecto, se muestra en pantallas que no usan el drawer -->
+    <ImageView
+        android:id="@+id/topbar_back_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@android:drawable/ic_media_previous"
+        app:tint="#4E342E"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="16dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="6dp"
+        android:contentDescription="Atrás"
+        android:visibility="gone" />
+
     <!-- Icono de notificaciones alineado a la derecha -->
     <androidx.cardview.widget.CardView
         android:id="@+id/topbar_notification_btn"
@@ -70,5 +88,24 @@
             android:padding="4dp"
             android:contentDescription="Usuario" />
     </androidx.cardview.widget.CardView>
+
+    <!-- Título central del TopBar -->
+    <TextView
+        android:id="@+id/topbar_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#4E342E"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@id/topbar_menu_btn"
+        app:layout_constraintEnd_toStartOf="@id/topbar_user_avatar_card"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

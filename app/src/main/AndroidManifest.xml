@@ -28,10 +28,22 @@
             android:name="com.example.tesis_angie.screens.LoginActivity"
             android:exported="true" />
         <activity
+            android:name="com.example.tesis_angie.screens.RegisterActivity"
+            android:exported="true" />
+        <activity
             android:name="com.example.tesis_angie.screens.HomeActivity"
             android:exported="true" />
         <activity
+            android:name="com.example.tesis_angie.screens.ReportsActivity"
+            android:exported="true" />
+        <activity
             android:name="com.example.tesis_angie.screens.UserAdminActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.tesis_angie.screens.EnvironmentalFactorsActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.tesis_angie.screens.SystemConfigurationActivity"
             android:exported="true" />
     </application>
 

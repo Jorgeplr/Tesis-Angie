@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -49,22 +50,29 @@ public class UserAdminActivity extends AppCompatActivity {
         findViewById(R.id.card_delete_user).setOnClickListener(v -> showSelectUserDialog(false));
 
         // TopBar funcionalidad
-        View menuBtn = findViewById(R.id.topbar_menu_btn);
-        if (menuBtn != null) {
-            menuBtn.setOnClickListener(v -> finish());
-        }
+        initializeTopBar("Administración de Usuarios");
         View notificationBtn = findViewById(R.id.topbar_notification_btn);
         if (notificationBtn != null) {
-            notificationBtn.setOnClickListener(v -> {
-                Toast.makeText(this, "No hay notificaciones nuevas", Toast.LENGTH_SHORT).show();
-            });
+            notificationBtn.setOnClickListener(v -> Toast.makeText(this, "No hay notificaciones nuevas", Toast.LENGTH_SHORT).show());
         }
         View userAvatar = findViewById(R.id.topbar_user_avatar_card);
         if (userAvatar != null) {
-            userAvatar.setOnClickListener(v -> {
-                Toast.makeText(this, "Perfil de usuario", Toast.LENGTH_SHORT).show();
-            });
+            userAvatar.setOnClickListener(v -> Toast.makeText(this, "Perfil de usuario", Toast.LENGTH_SHORT).show());
         }
+    }
+
+    // Inicializa topbar para pantallas internas
+    private void initializeTopBar(String titleText) {
+        View menuBtn = findViewById(R.id.topbar_menu_btn);
+        View backBtn = findViewById(R.id.topbar_back_btn);
+        TextView title = findViewById(R.id.topbar_title);
+
+        if (menuBtn != null) menuBtn.setVisibility(View.GONE);
+        if (backBtn != null) {
+            backBtn.setVisibility(View.VISIBLE);
+            backBtn.setOnClickListener(v -> finish());
+        }
+        if (title != null) title.setText(titleText);
     }
 
     private void showAddUserDialog() {

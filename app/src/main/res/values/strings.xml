@@ -9,13 +9,13 @@
     <string name="temperature_placeholder">Temperatura: --°C</string>
     <string name="humidity_placeholder">Humedad: --%</string>
     <string name="plants_placeholder">Plantas: --</string>
-    <string name="user">Usuario</string>
+    <string name="user">Modulo de Usuarios</string>
     <string name="user_profile">Perfil y configuración</string>
-    <string name="weather">Clima</string>
-    <string name="weather_data">Datos meteorológicos</string>
-    <string name="reports">Reportes</string>
+    <string name="weather">Factores Ambientales</string>
+    <string name="weather_data">Datos ambientales</string>
+    <string name="reports">Reportes ambientales</string>
     <string name="reports_stats">Análisis y estadísticas</string>
-    <string name="settings">Configuración</string>
+    <string name="settings">Configuración del sistema</string>
     <string name="settings_system">Ajustes del sistema</string>
     <string name="quick_stats">Estado Actual</string>
     <string name="temperature">Temperatura</string>
@@ -23,4 +23,10 @@
     <string name="plants">Plantas</string>
     <string name="menu_title">Menú principal</string>
     <string name="logout">Cerrar sesión</string>
+    <string name="welcome_message">Bienvenido a Tesis Angie</string>
+    <string name="temp_format">Temp: %d°C</string>
+    <string name="humidity_format">Humedad: %d%%</string>
+    <string name="plants_format">Plantas: %d%%</string>
+    <string name="export_toast">Exportando reportes...</string>
+    <string name="report_precip_placeholder">-- mm</string>
 </resources>

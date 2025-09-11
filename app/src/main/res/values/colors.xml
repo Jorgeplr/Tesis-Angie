@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Paleta tomada del Home: marrones y acentos profesionales -->
+    <color name="colorPrimaryBrown">#8B4513</color>
+    <color name="colorPrimaryBrownDark">#5C3317</color>
+    <color name="colorAccentOrange">#D2691E</color>
+    <color name="colorTextPrimary">#2D1B0E</color>
+    <color name="colorTextSecondary">#6D4C36</color>
+    <color name="colorAccentBlue">#4682B4</color>
+    <color name="colorSuccess">#4CAF50</color>
+    <color name="colorLightBg">#FFF5F1</color>
+
+    <!-- Básicos -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

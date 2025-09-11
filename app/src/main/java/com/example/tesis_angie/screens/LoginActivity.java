@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
     private CardView btnCard;
     private TextView tvError;
+    private TextView tvRegisterLink;
     private ImageView ivLoginLogo;
     private ProgressBar progressBar;
     private CardView loginCard;
@@ -95,6 +96,11 @@ public class LoginActivity extends AppCompatActivity {
     private void setupClickListeners() {
         btnLogin.setOnClickListener(v -> handleLogin());
         btnCard.setOnClickListener(v -> handleLogin());
+        tvRegisterLink = findViewById(R.id.tvRegisterLink);
+        tvRegisterLink.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
+        });
         // Limpiar errores al escribir
         etUsername.setOnFocusChangeListener((v, hasFocus) -> {
             if (hasFocus) tilUsername.setError(null);

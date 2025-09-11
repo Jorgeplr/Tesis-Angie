@@ -45,11 +45,26 @@ public class HomeActivity extends AppCompatActivity {
             Intent intent = new Intent(HomeActivity.this, UserAdminActivity.class);
             startActivity(intent);
         });
+        // Abrir Reportes desde la tarjeta
+        findViewById(R.id.card_reports).setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, com.example.tesis_angie.screens.ReportsActivity.class);
+            startActivity(intent);
+        });
+        // Abrir Factores Ambientales desde la tarjeta
+        findViewById(R.id.card_weather).setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, EnvironmentalFactorsActivity.class);
+            startActivity(intent);
+        });
+        // Abrir Configuración del Sistema desde la tarjeta
+        findViewById(R.id.card_settings).setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, SystemConfigurationActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void setupGreeting() {
         if (tvGreeting != null) {
-            tvGreeting.setText("Bienvenido a Tesis Angie");
+            tvGreeting.setText(getString(R.string.welcome_message));
         }
     }
 
@@ -64,9 +79,9 @@ public class HomeActivity extends AppCompatActivity {
                 int plantsStatus = random.nextInt(100); // Estado de las plantas entre 0 y 100
 
                 // Actualizar las vistas con los datos simulados
-                if (tvTemperature != null) tvTemperature.setText("Temp: " + temperature + "°C");
-                if (tvHumidity != null) tvHumidity.setText("Humedad: " + humidity + "%");
-                if (tvPlants != null) tvPlants.setText("Plantas: " + plantsStatus + "%");
+                if (tvTemperature != null) tvTemperature.setText(getString(R.string.temp_format, temperature));
+                if (tvHumidity != null) tvHumidity.setText(getString(R.string.humidity_format, humidity));
+                if (tvPlants != null) tvPlants.setText(getString(R.string.plants_format, plantsStatus));
 
                 // Repetir la simulación cada 5 segundos
                 handler.postDelayed(this, 5000);
@@ -87,13 +102,19 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
         findViewById(R.id.drawer_btn_clima).setOnClickListener(v -> {
-            // Aquí iría la lógica para la opción Clima
+            // Abrir la actividad de Factores Ambientales
+            Intent intent = new Intent(HomeActivity.this, EnvironmentalFactorsActivity.class);
+            startActivity(intent);
         });
         findViewById(R.id.drawer_btn_reportes).setOnClickListener(v -> {
-            // Aquí iría la lógica para la opción Reportes
+            // Abrir la actividad de Reportes
+            Intent intent = new Intent(HomeActivity.this, com.example.tesis_angie.screens.ReportsActivity.class);
+            startActivity(intent);
         });
         findViewById(R.id.drawer_btn_settings).setOnClickListener(v -> {
-            // Aquí iría la lógica para la opción Configuración
+            // Abrir la actividad de Configuración del Sistema
+            Intent intent = new Intent(HomeActivity.this, SystemConfigurationActivity.class);
+            startActivity(intent);
         });
         findViewById(R.id.drawer_btn_logout).setOnClickListener(v -> {
             // Cerrar sesión: volver al Login
