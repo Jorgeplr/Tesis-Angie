@@ -10,6 +10,9 @@
     <color name="colorSuccess">#4CAF50</color>
     <color name="colorLightBg">#FFF5F1</color>
 
+    <!-- Tint para iconos y texto del NavigationView -->
+    <color name="nav_item_tint">#6D4C36</color>
+
     <!-- Básicos -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>

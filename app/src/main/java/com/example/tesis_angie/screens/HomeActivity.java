@@ -6,6 +6,11 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.TextView;
+import android.view.MenuItem;
+
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.widget.Toolbar;
+import com.google.android.material.navigation.NavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -16,6 +21,8 @@ public class HomeActivity extends AppCompatActivity {
     private TextView tvGreeting;
     private TextView tvTemperature, tvHumidity, tvPlants;
     private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+    private ActionBarDrawerToggle drawerToggle;
 
     // Handler para actualizaciones periódicas
     private Handler handler;
@@ -91,38 +98,64 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setupDrawerLogic() {
+        // Inicializar NavigationView
+        navigationView = findViewById(R.id.navigation_view);
+
+        // Configurar ActionBarDrawerToggle para que el topbar abra/cierre el drawer
         View menuBtn = findViewById(R.id.topbar_menu_btn);
-        if (menuBtn != null && drawerLayout != null) {
-            menuBtn.setOnClickListener(v -> drawerLayout.openDrawer(findViewById(R.id.left_drawer)));
+        if (menuBtn != null) {
+            menuBtn.setOnClickListener(v -> {
+                if (drawerLayout.isDrawerOpen(navigationView)) {
+                    drawerLayout.closeDrawer(navigationView);
+                } else {
+                    drawerLayout.openDrawer(navigationView);
+                }
+            });
         }
-        // Opciones del Drawer
-        findViewById(R.id.drawer_btn_user).setOnClickListener(v -> {
-            // Abrir la ventana de administración de usuarios
-            Intent intent = new Intent(HomeActivity.this, UserAdminActivity.class);
-            startActivity(intent);
-        });
-        findViewById(R.id.drawer_btn_clima).setOnClickListener(v -> {
-            // Abrir la actividad de Factores Ambientales
-            Intent intent = new Intent(HomeActivity.this, EnvironmentalFactorsActivity.class);
-            startActivity(intent);
-        });
-        findViewById(R.id.drawer_btn_reportes).setOnClickListener(v -> {
-            // Abrir la actividad de Reportes
-            Intent intent = new Intent(HomeActivity.this, com.example.tesis_angie.screens.ReportsActivity.class);
-            startActivity(intent);
-        });
-        findViewById(R.id.drawer_btn_settings).setOnClickListener(v -> {
-            // Abrir la actividad de Configuración del Sistema
-            Intent intent = new Intent(HomeActivity.this, SystemConfigurationActivity.class);
-            startActivity(intent);
-        });
-        findViewById(R.id.drawer_btn_logout).setOnClickListener(v -> {
-            // Cerrar sesión: volver al Login
-            Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            finish();
-        });
+
+        // Actualizar header con datos (si están disponibles)
+        if (navigationView != null) {
+            View header = navigationView.getHeaderView(0);
+            TextView name = header.findViewById(R.id.nav_header_name);
+            TextView email = header.findViewById(R.id.nav_header_email);
+            // Aquí podrías cargar el nombre real desde SharedPreferences o perfil
+            name.setText("Usuario Demo");
+            email.setText("usuario@ejemplo.com");
+
+            navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(MenuItem item) {
+                    int id = item.getItemId();
+                    Intent intent;
+                    switch (id) {
+                        case R.id.nav_user:
+                            intent = new Intent(HomeActivity.this, UserAdminActivity.class);
+                            startActivity(intent);
+                            break;
+                        case R.id.nav_environment:
+                            intent = new Intent(HomeActivity.this, EnvironmentalFactorsActivity.class);
+                            startActivity(intent);
+                            break;
+                        case R.id.nav_reports:
+                            intent = new Intent(HomeActivity.this, com.example.tesis_angie.screens.ReportsActivity.class);
+                            startActivity(intent);
+                            break;
+                        case R.id.nav_settings:
+                            intent = new Intent(HomeActivity.this, SystemConfigurationActivity.class);
+                            startActivity(intent);
+                            break;
+                        case R.id.nav_logout:
+                            Intent logout = new Intent(HomeActivity.this, LoginActivity.class);
+                            logout.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(logout);
+                            finish();
+                            break;
+                    }
+                    drawerLayout.closeDrawer(navigationView);
+                    return true;
+                }
+            });
+        }
     }
 
     @Override
