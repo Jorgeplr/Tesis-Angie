@@ -126,30 +126,23 @@ public class HomeActivity extends AppCompatActivity {
                 @Override
                 public boolean onNavigationItemSelected(MenuItem item) {
                     int id = item.getItemId();
-                    Intent intent;
-                    switch (id) {
-                        case R.id.nav_user:
-                            intent = new Intent(HomeActivity.this, UserAdminActivity.class);
-                            startActivity(intent);
-                            break;
-                        case R.id.nav_environment:
-                            intent = new Intent(HomeActivity.this, EnvironmentalFactorsActivity.class);
-                            startActivity(intent);
-                            break;
-                        case R.id.nav_reports:
-                            intent = new Intent(HomeActivity.this, com.example.tesis_angie.screens.ReportsActivity.class);
-                            startActivity(intent);
-                            break;
-                        case R.id.nav_settings:
-                            intent = new Intent(HomeActivity.this, SystemConfigurationActivity.class);
-                            startActivity(intent);
-                            break;
-                        case R.id.nav_logout:
-                            Intent logout = new Intent(HomeActivity.this, LoginActivity.class);
-                            logout.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            startActivity(logout);
-                            finish();
-                            break;
+                    if (id == R.id.nav_user) {
+                        Intent intent = new Intent(HomeActivity.this, UserAdminActivity.class);
+                        startActivity(intent);
+                    } else if (id == R.id.nav_environment) {
+                        Intent intent = new Intent(HomeActivity.this, EnvironmentalFactorsActivity.class);
+                        startActivity(intent);
+                    } else if (id == R.id.nav_reports) {
+                        Intent intent = new Intent(HomeActivity.this, com.example.tesis_angie.screens.ReportsActivity.class);
+                        startActivity(intent);
+                    } else if (id == R.id.nav_settings) {
+                        Intent intent = new Intent(HomeActivity.this, SystemConfigurationActivity.class);
+                        startActivity(intent);
+                    } else if (id == R.id.nav_logout) {
+                        Intent logout = new Intent(HomeActivity.this, LoginActivity.class);
+                        logout.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(logout);
+                        finish();
                     }
                     drawerLayout.closeDrawer(navigationView);
                     return true;
